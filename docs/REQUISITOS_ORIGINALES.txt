@@ -1,0 +1,1049 @@
+MASTER PROMPT — SOLERVIA SALES AGENT
+
+1. TU ROL
+
+Actúa como un equipo senior de desarrollo de software compuesto por:
+
+* Software Architect
+* Full-Stack Developer
+* Backend Engineer
+* AI Engineer
+* UI/UX Designer
+* Database Engineer
+* QA Engineer
+* DevOps Engineer
+
+Tu objetivo es construir una aplicación completa, funcional y preparada para desplegarse llamada Solervia Sales Agent.
+
+No quiero únicamente una demostración visual, un prototipo de Figma o un frontend sin funcionalidad.
+
+Quiero una aplicación real, con frontend, backend, base de datos, automatizaciones, integraciones y arquitectura preparada para producción.
+
+Trabaja de principio a fin en una sola ejecución.
+
+No dividas el proyecto en múltiples fases de implementación que requieran nuevos prompts.
+
+No te detengas después de crear la estructura.
+
+No entregues solamente un plan.
+
+Construye el software.
+
+⸻
+
+2. CONTEXTO DEL NEGOCIO
+
+Solervia es una empresa de desarrollo de software que ofrece dos líneas principales de negocio:
+
+Solervia Products
+
+Productos SaaS sencillos y accesibles para pequeñas y medianas empresas.
+
+Su modelo comercial se basa principalmente en suscripciones mensuales.
+
+Solervia Custom
+
+Servicios personalizados de desarrollo de software:
+
+* Sitios web.
+* Aplicaciones web.
+* Sistemas administrativos.
+* Sistemas internos.
+* Automatizaciones.
+* Integraciones.
+* Soluciones digitales para PyMEs.
+
+El mercado inicial es Guadalajara, Jalisco, México.
+
+Posteriormente, el sistema deberá permitir buscar prospectos en otras ciudades.
+
+El software que vas a construir es una herramienta interna y privada de Solervia, no un producto SaaS destinado a otros usuarios.
+
+Inicialmente tendrá un único administrador.
+
+No implementes facturación, suscripciones, organizaciones múltiples ni funcionalidades innecesarias.
+
+⸻
+
+3. OBJETIVO PRINCIPAL
+
+Construir un sistema inteligente de prospección comercial que pueda:
+
+1. Encontrar empresas potencialmente interesadas en los servicios de Solervia.
+2. Investigar información pública de esas empresas.
+3. Registrar los prospectos en una base de datos.
+4. Identificar oportunidades comerciales.
+5. Calificar y priorizar prospectos.
+6. Preparar correos personalizados.
+7. Gestionar campañas comerciales.
+8. Realizar llamadas mediante un agente de IA cuando exista una base válida para contactar al destinatario.
+9. Mantener conversaciones naturales.
+10. Responder preguntas y objeciones comerciales.
+11. Intentar concretar reuniones.
+12. Registrar resultados.
+13. Generar transcripciones y resúmenes.
+14. Programar seguimientos.
+15. Enviar notificaciones mediante Telegram.
+16. Mostrar estadísticas comerciales.
+17. Ejecutar tareas programadas desde un servidor.
+
+El sistema debe reducir considerablemente mi trabajo manual de prospección.
+
+Sin embargo, debe respetar las restricciones legales, las preferencias de contacto y los límites configurados por el administrador.
+
+⸻
+
+4. STACK TECNOLÓGICO
+
+Utiliza preferentemente:
+
+Frontend:
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+
+Backend:
+
+* Node.js
+* TypeScript
+* API Routes o Route Handlers de Next.js
+
+Base de datos:
+
+* Supabase
+* PostgreSQL
+
+Inteligencia artificial:
+
+* API de OpenAI para análisis y generación de contenido comercial.
+* Retell AI para llamadas de voz.
+
+Telefonía:
+
+* Twilio cuando sea necesario.
+
+Notificaciones:
+
+* Telegram Bot API.
+
+Calendario:
+
+* Google Calendar API.
+
+Búsqueda de empresas:
+
+* API DENUE del INEGI.
+* Otras fuentes autorizadas cuando aporten valor.
+
+Despliegue:
+
+* Vercel para la aplicación.
+* Un mecanismo persistente de ejecución para trabajos programados y llamadas.
+
+Puedes utilizar otras dependencias cuando sean necesarias, pero evita introducir servicios de pago que no aporten valor importante.
+
+No agregues complejidad innecesaria.
+
+Prioriza mantener bajos los costos de infraestructura.
+
+⸻
+
+5. DISEÑO DE LA APLICACIÓN
+
+Quiero una aplicación visualmente profesional.
+
+Debe parecer una herramienta comercial real, no un dashboard genérico generado automáticamente.
+
+Estilo:
+
+* SaaS B2B moderno.
+* Minimalista.
+* Profesional.
+* Interfaz limpia.
+* Excelente jerarquía visual.
+* Navegación intuitiva.
+* Responsive.
+* Compatible con escritorio y dispositivos móviles.
+
+Puedes utilizar una combinación de:
+
+* Blanco.
+* Azul oscuro.
+* Tonos neutros.
+* Acentos azules o verdes.
+* Colores de estado claramente diferenciados.
+
+No abuses de degradados, sombras, tarjetas o animaciones.
+
+Utiliza componentes reutilizables.
+
+No llenes el dashboard con métricas ficticias.
+
+Cuando no existan datos, muestra estados vacíos correctamente diseñados.
+
+La aplicación debe incluir un menú lateral con:
+
+Dashboard
+Prospectos
+Buscar empresas
+Campañas
+Llamadas
+Correos
+Calendario
+Actividad
+Estadísticas
+Configuración
+
+⸻
+
+6. DASHBOARD PRINCIPAL
+
+Construye un dashboard que muestre:
+
+* Total de prospectos.
+* Prospectos nuevos.
+* Prospectos contactados.
+* Prospectos interesados.
+* Reuniones agendadas.
+* Llamadas realizadas.
+* Correos enviados.
+* Tasa de respuesta.
+* Tasa de conversión.
+* Costo estimado de las operaciones.
+
+Incluye una sección de actividad reciente.
+
+Incluye también una sección de próximas reuniones.
+
+Todas las métricas deben calcularse utilizando datos reales almacenados en la base de datos.
+
+No utilices números hardcodeados.
+
+⸻
+
+7. MÓDULO DE BÚSQUEDA DE EMPRESAS
+
+Implementa un buscador de empresas.
+
+Inicialmente debe permitir buscar negocios en Guadalajara.
+
+Filtros:
+
+* Ciudad.
+* Municipio.
+* Sector.
+* Actividad económica.
+* Tamaño de empresa.
+* Número aproximado de empleados, cuando exista el dato.
+* Palabras clave.
+
+Utiliza inicialmente la API DENUE del INEGI.
+
+Obtén los datos disponibles mediante sus endpoints oficiales.
+
+Cada empresa encontrada debe poder registrarse como prospecto.
+
+Información deseada:
+
+* Nombre comercial.
+* Razón social, cuando esté disponible.
+* Giro comercial.
+* Dirección.
+* Ciudad.
+* Estado.
+* Teléfono público.
+* Correo corporativo público.
+* Sitio web.
+* Nombre del responsable, cuando exista una fuente legítima.
+* LinkedIn corporativo, cuando esté disponible mediante métodos autorizados.
+* Tamaño aproximado.
+* Fuente de información.
+* Fecha de consulta.
+
+No inventes información.
+
+No realices scraping que viole términos de servicio.
+
+No extraigas perfiles personales de LinkedIn mediante automatizaciones no autorizadas.
+
+Si un dato no existe, utiliza null.
+
+Implementa detección de duplicados.
+
+Evita registrar repetidamente la misma empresa.
+
+⸻
+
+8. CRM DE PROSPECTOS
+
+Construye un CRM funcional.
+
+Cada prospecto debe tener una ficha individual.
+
+Estados comerciales:
+
+* Nuevo.
+* Investigando.
+* Pendiente de revisión.
+* Aprobado para contacto.
+* Contactado.
+* Sin respuesta.
+* Interesado.
+* Reunión propuesta.
+* Reunión confirmada.
+* No interesado.
+* Cliente.
+* No contactar.
+
+Cada ficha debe mostrar:
+
+Información de la empresa.
+
+Datos de contacto.
+
+Historial de interacciones.
+
+Correos enviados.
+
+Llamadas realizadas.
+
+Transcripciones.
+
+Notas.
+
+Oportunidades detectadas.
+
+Producto recomendado.
+
+Próxima acción.
+
+Fecha del próximo seguimiento.
+
+Permite editar prospectos manualmente.
+
+Implementa búsqueda, filtros y ordenamiento.
+
+Incluye exportación CSV.
+
+⸻
+
+9. MOTOR DE CALIFICACIÓN CON IA
+
+Implementa un sistema que analice prospectos.
+
+Debe determinar qué tan compatible parece cada empresa con los servicios de Solervia.
+
+Considera:
+
+* Sector.
+* Tamaño.
+* Actividad comercial.
+* Tipo de operaciones.
+* Información pública disponible.
+* Posible necesidad de digitalización.
+* Compatibilidad con productos SaaS.
+* Compatibilidad con desarrollo personalizado.
+
+Genera:
+
+* Puntuación de prioridad.
+* Producto recomendado.
+* Justificación.
+* Posibles necesidades.
+* Preguntas sugeridas para validar esas necesidades.
+
+Nunca presentes una necesidad inferida como un hecho confirmado.
+
+Distingue claramente entre información verificada e hipótesis comercial.
+
+⸻
+
+10. AGENTE DE VOZ CON IA
+
+Integra Retell AI para gestionar conversaciones telefónicas.
+
+El agente debe poder:
+
+* Presentarse como asistente virtual de Solervia.
+* Explicar brevemente el motivo de la llamada.
+* Preguntar por la persona encargada.
+* Identificar necesidades.
+* Explicar los servicios relevantes.
+* Responder preguntas frecuentes.
+* Manejar objeciones.
+* Detectar interés.
+* Proponer una reunión.
+* Registrar el resultado.
+
+El agente debe hablar español de México.
+
+Debe mantener un tono:
+
+Profesional.
+Natural.
+Amable.
+Conversacional.
+Breve.
+Respetuoso.
+
+No debe sonar como alguien leyendo un guion rígido.
+
+Debe poder improvisar dentro de los límites de la información comercial proporcionada.
+
+No debe inventar:
+
+* Precios.
+* Descuentos.
+* Funcionalidades.
+* Testimonios.
+* Clientes.
+* Garantías.
+* Promesas comerciales.
+
+Si desconoce algo, debe reconocerlo y ofrecer seguimiento humano.
+
+Debe identificar cuando una persona no desea continuar y terminar respetuosamente.
+
+No debe intentar ocultar que es una IA.
+
+⸻
+
+11. GUIONES COMERCIALES
+
+Implementa un módulo para configurar guiones.
+
+Quiero poder definir:
+
+* Producto ofrecido.
+* Público objetivo.
+* Mensaje inicial.
+* Propuesta de valor.
+* Preguntas de calificación.
+* Objeciones frecuentes.
+* Respuestas permitidas.
+* Objetivo de la conversación.
+* Duración máxima.
+* Condiciones para finalizar.
+
+Los guiones deben poder editarse desde la interfaz.
+
+No quiero tener que modificar código cada vez que cambie mi estrategia comercial.
+
+El agente debe recibir el contexto correspondiente al producto y prospecto.
+
+⸻
+
+12. CAMPAÑAS AUTOMATIZADAS
+
+Implementa un módulo de campañas.
+
+Debe permitir:
+
+Crear campaña.
+
+Seleccionar prospectos.
+
+Elegir producto.
+
+Elegir canal.
+
+Definir horario.
+
+Definir cantidad máxima de contactos.
+
+Definir presupuesto máximo.
+
+Iniciar campaña.
+
+Pausar campaña.
+
+Reanudar campaña.
+
+Cancelar campaña.
+
+Consultar resultados.
+
+Los canales disponibles serán:
+
+Correo electrónico.
+
+Llamadas.
+
+La ejecución real debe estar condicionada a que los prospectos sean elegibles para el canal correspondiente.
+
+Incluye controles de autorización y cumplimiento.
+
+No permitas iniciar una campaña de llamadas si no está configurado correctamente el proveedor de telefonía.
+
+No permitas contactar prospectos marcados como “No contactar”.
+
+Implementa una lista de exclusión global.
+
+Respeta límites de intentos, horarios, pausas y presupuesto.
+
+Incluye un botón de emergencia para detener todas las campañas.
+
+Evita contactos duplicados mediante trabajos idempotentes.
+
+⸻
+
+13. MÓDULO DE CORREOS
+
+Implementa integración con un proveedor de correo.
+
+Funcionalidades:
+
+* Generar correos personalizados.
+* Editar plantillas.
+* Guardar borradores.
+* Aprobar envíos.
+* Enviar correos autorizados.
+* Registrar resultados.
+* Programar seguimientos.
+* Gestionar respuestas.
+* Registrar solicitudes de baja.
+
+No envíes campañas masivas desde una cuenta personal sin verificar las condiciones del proveedor.
+
+Implementa inicialmente un flujo de aprobación humana.
+
+No envíes mensajes a contactos sin una base válida para recibir comunicaciones comerciales.
+
+Incluye identificación del remitente y un mecanismo de exclusión.
+
+⸻
+
+14. CALENDARIO Y REUNIONES
+
+Integra Google Calendar mediante OAuth.
+
+Permite:
+
+Consultar disponibilidad.
+
+Proponer horarios.
+
+Registrar reuniones.
+
+Confirmar reuniones.
+
+Evitar conflictos.
+
+Crear eventos.
+
+Guardar identificadores de eventos.
+
+El agente nunca debe confirmar una cita sin comprobar disponibilidad.
+
+Si no existe integración activa con Google Calendar, guarda la reunión como propuesta pendiente de confirmación.
+
+Incluye:
+
+Nombre de empresa.
+
+Contacto.
+
+Fecha.
+
+Hora.
+
+Producto.
+
+Resumen de conversación.
+
+Estado de confirmación.
+
+⸻
+
+15. TELEGRAM
+
+Implementa un bot privado de Telegram.
+
+Debe enviar notificaciones cuando:
+
+* Se detecte un prospecto de alta prioridad.
+* Se complete una llamada.
+* Una persona muestre interés.
+* Se proponga una reunión.
+* Se confirme una reunión.
+* Una campaña finalice.
+* Ocurra un error importante.
+* Se alcance el presupuesto máximo.
+
+Ejemplo:
+
+SOLERVIA SALES AGENT
+
+Nuevo prospecto interesado.
+
+Empresa: [Nombre]
+
+Producto: [Producto]
+
+Resultado: [Resumen]
+
+Reunión: [Fecha y hora, si está confirmada]
+
+Siguiente acción: [Acción]
+
+Incluye enlaces hacia la ficha del prospecto.
+
+Permite configurar qué notificaciones recibir.
+
+⸻
+
+16. HISTORIAL DE LLAMADAS
+
+Cada llamada debe generar un registro.
+
+Campos:
+
+* Prospecto.
+* Fecha.
+* Hora.
+* Duración.
+* Estado.
+* Resultado.
+* Transcripción.
+* Resumen generado por IA.
+* Interés detectado.
+* Objeciones.
+* Próxima acción.
+* Costo estimado.
+* Identificador del proveedor.
+
+Implementa almacenamiento de grabaciones únicamente cuando exista autorización y configuración adecuada.
+
+Las grabaciones deben ser opcionales.
+
+Prioriza guardar transcripciones y resúmenes para reducir costos.
+
+Implementa políticas configurables de conservación y eliminación de datos.
+
+⸻
+
+17. AUTOMATIZACIONES
+
+El sistema debe funcionar aunque mi computadora esté apagada.
+
+Implementa un sistema de trabajos en segundo plano.
+
+Debe permitir:
+
+* Ejecutar búsquedas programadas.
+* Procesar prospectos.
+* Preparar seguimientos.
+* Ejecutar campañas autorizadas.
+* Consultar resultados.
+* Procesar webhooks.
+* Enviar notificaciones.
+* Reintentar trabajos fallidos.
+
+Utiliza una arquitectura compatible con despliegue cloud.
+
+No dependas de procesos ejecutándose permanentemente en mi MacBook.
+
+Implementa registros de ejecución y manejo de errores.
+
+⸻
+
+18. BASE DE DATOS
+
+Diseña un esquema relacional completo.
+
+Entidades sugeridas:
+
+* users
+* companies
+* contacts
+* prospects
+* products
+* campaigns
+* campaign_prospects
+* calls
+* emails
+* meetings
+* activities
+* scripts
+* notifications
+* automation_jobs
+* integrations
+* suppression_list
+* audit_logs
+
+Incluye:
+
+Migraciones SQL.
+
+Índices necesarios.
+
+Restricciones de integridad.
+
+Relaciones.
+
+Timestamps.
+
+Políticas de acceso.
+
+No guardes claves de API en tablas públicas.
+
+Implementa Row Level Security cuando corresponda.
+
+⸻
+
+19. SEGURIDAD
+
+Implementa:
+
+Autenticación segura.
+
+Rutas protegidas.
+
+Variables de entorno.
+
+Validación de entradas.
+
+Control de acceso.
+
+Protección de credenciales.
+
+Verificación de firmas de webhooks.
+
+Prevención de duplicados.
+
+Manejo de errores.
+
+Logs seguros.
+
+Limitación de solicitudes.
+
+Protección contra ejecución accidental de campañas.
+
+No expongas tokens de servicios externos en el frontend.
+
+No almacenes información sensible innecesaria.
+
+⸻
+
+20. CUMPLIMIENTO Y CONTACTO RESPONSABLE
+
+El sistema debe permitir operar conforme a las obligaciones legales aplicables en México.
+
+Incluye:
+
+* Registro de la fuente de los datos.
+* Base de autorización o justificación para el tratamiento y contacto.
+* Preferencias de comunicación.
+* Lista de exclusión.
+* Gestión de solicitudes de no contacto.
+* Historial de consentimientos cuando corresponda.
+* Avisos de privacidad configurables.
+* Información sobre el uso de IA.
+* Controles de grabación.
+* Límites de contacto.
+
+No asumas que encontrar un teléfono públicamente autoriza llamadas comerciales automatizadas.
+
+El sistema debe permanecer en modo de simulación o aprobación manual cuando falten las verificaciones necesarias.
+
+No eludas mecanismos antispam ni restricciones de proveedores.
+
+⸻
+
+21. CONFIGURACIÓN
+
+Crea una sección de configuración para administrar:
+
+Datos de Solervia.
+
+Productos.
+
+Precios autorizados.
+
+Guiones.
+
+Credenciales de integraciones.
+
+Presupuesto máximo diario.
+
+Límite de llamadas.
+
+Límite de correos.
+
+Horarios permitidos.
+
+Ciudad objetivo.
+
+Sectores objetivo.
+
+Telegram.
+
+Calendario.
+
+Proveedores de IA.
+
+Modo simulación / producción.
+
+Las credenciales deben gestionarse de manera segura.
+
+⸻
+
+22. MODO DEMOSTRACIÓN
+
+La aplicación debe funcionar incluso si todavía no he configurado las APIs externas.
+
+Implementa adaptadores simulados para:
+
+* IA.
+* Telefonía.
+* Correo.
+* Calendario.
+* Notificaciones.
+
+Los datos simulados deben estar claramente identificados.
+
+No confundas simulaciones con llamadas, correos o reuniones reales.
+
+El modo demostración debe permitir probar el flujo completo sin gastar dinero.
+
+No debe enviar comunicaciones reales.
+
+⸻
+
+23. REQUISITOS DE CALIDAD
+
+Quiero código limpio y mantenible.
+
+Utiliza:
+
+* TypeScript estricto.
+* Arquitectura modular.
+* Componentes reutilizables.
+* Separación de responsabilidades.
+* Validación de datos.
+* Manejo de errores.
+* Tipado correcto.
+* Variables de entorno.
+* Documentación breve.
+* Pruebas automatizadas.
+
+Evita:
+
+* Código duplicado.
+* Archivos gigantes.
+* Dependencias innecesarias.
+* Datos falsos en producción.
+* Interfaces sin funcionalidad.
+* Botones que no hacen nada.
+* Funcionalidades incompletas presentadas como terminadas.
+
+⸻
+
+24. DOCUMENTACIÓN
+
+Genera:
+
+README.md
+
+.env.example
+
+AGENTS.md
+
+Documentación de arquitectura.
+
+Instrucciones de instalación.
+
+Instrucciones de despliegue.
+
+Guía de configuración de APIs.
+
+Guía para activar llamadas reales.
+
+Guía de seguridad y cumplimiento.
+
+Explicación de costos variables.
+
+Documenta exactamente qué servicios externos debo configurar.
+
+Nunca incluyas credenciales reales en archivos versionados.
+
+⸻
+
+25. PRUEBAS
+
+Antes de terminar:
+
+1. Instala dependencias.
+2. Ejecuta comprobaciones de TypeScript.
+3. Ejecuta lint.
+4. Ejecuta pruebas.
+5. Comprueba el build de producción.
+6. Verifica las rutas principales.
+7. Comprueba los formularios.
+8. Comprueba la persistencia.
+9. Prueba el CRM.
+10. Prueba campañas simuladas.
+11. Prueba webhooks con eventos simulados.
+12. Comprueba que no se realizan llamadas reales en modo demo.
+
+Corrige los errores encontrados.
+
+No declares que una integración real funciona si no fue probada con credenciales válidas.
+
+⸻
+
+26. OPTIMIZACIÓN DE COSTOS
+
+Este proyecto será utilizado inicialmente por una sola persona.
+
+No diseñes infraestructura empresarial innecesaria.
+
+Prioriza:
+
+* Servicios gratuitos cuando sean adecuados.
+* Infraestructura económica.
+* Procesamiento eficiente.
+* Uso moderado de tokens.
+* Búsquedas por lotes.
+* Caché cuando corresponda.
+* Límites de gasto.
+* Reutilización de resultados.
+* Desactivación de servicios que no se utilizan.
+
+Implementa un estimador de costos para llamadas y operaciones de IA.
+
+⸻
+
+27. FORMA DE TRABAJO
+
+Trabaja directamente sobre el repositorio abierto en VS Code.
+
+Primero inspecciona su contenido.
+
+Si está vacío, inicializa el proyecto.
+
+Si contiene archivos existentes, consérvalos cuando corresponda.
+
+No sobrescribas trabajo existente innecesariamente.
+
+No ejecutes operaciones destructivas sin autorización.
+
+No necesitas preguntarme por cada decisión técnica.
+
+Toma decisiones razonables y documenta las importantes.
+
+No te detengas para solicitar credenciales.
+
+Utiliza variables de entorno y adaptadores simulados cuando falten.
+
+No realices llamadas reales ni envíes correos reales durante el desarrollo.
+
+No compres servicios ni actives planes de pago.
+
+No hagas despliegues públicos sin autorización.
+
+⸻
+
+28. PRIORIDAD DE IMPLEMENTACIÓN
+
+Debes intentar completar todo el alcance.
+
+Sin embargo, prioriza que los módulos centrales funcionen de extremo a extremo.
+
+Orden de prioridad:
+
+1. Estructura del proyecto.
+2. Base de datos.
+3. Autenticación.
+4. Dashboard.
+5. CRM.
+6. Búsqueda de empresas.
+7. Calificación de prospectos.
+8. Productos y guiones.
+9. Campañas.
+10. Correos.
+11. Telefonía.
+12. Calendario.
+13. Telegram.
+14. Automatizaciones.
+15. Estadísticas.
+16. Pruebas.
+17. Documentación.
+
+No sacrifiques funcionalidades básicas por animaciones o detalles estéticos.
+
+No construyas únicamente pantallas.
+
+Cada módulo debe tener una implementación funcional.
+
+⸻
+
+29. CRITERIOS DE ACEPTACIÓN
+
+Consideraré que el sistema está terminado cuando pueda:
+
+* Iniciar sesión.
+* Abrir el dashboard.
+* Buscar empresas.
+* Registrar prospectos.
+* Consultar fichas.
+* Editar información.
+* Calificar prospectos.
+* Configurar productos.
+* Crear guiones.
+* Crear campañas.
+* Simular llamadas.
+* Consultar transcripciones.
+* Preparar correos.
+* Programar seguimientos.
+* Registrar reuniones.
+* Consultar estadísticas.
+* Configurar integraciones.
+* Recibir notificaciones cuando Telegram esté configurado.
+* Ejecutar tareas programadas cuando el entorno correspondiente esté configurado.
+
+Además, las integraciones reales deben quedar implementadas y documentadas.
+
+Si alguna función depende de credenciales, permisos o infraestructura todavía no configurada, debe indicarse claramente.
+
+⸻
+
+30. INSTRUCCIÓN FINAL
+
+Empieza a trabajar inmediatamente.
+
+No respondas únicamente con una explicación.
+
+No generes solamente un documento de planificación.
+
+Construye Solervia Sales Agent.
+
+Toma decisiones técnicas razonables sin interrumpir constantemente.
+
+Utiliza el repositorio actual.
+
+Implementa el sistema completo con la mayor calidad posible.
+
+Ejecuta las pruebas.
+
+Corrige los errores.
+
+Al finalizar, entrega un resumen que incluya:
+
+1. Qué construiste.
+2. Qué funcionalidades funcionan realmente.
+3. Qué integraciones quedaron implementadas.
+4. Qué integraciones necesitan credenciales.
+5. Qué partes funcionan en modo simulación.
+6. Qué pruebas ejecutaste.
+7. Qué errores quedaron pendientes.
+8. Qué variables de entorno debo configurar.
+9. Cómo iniciar la aplicación.
+10. Cómo desplegarla.
+11. Qué necesito hacer para activar llamadas reales.
+
+No afirmes que algo funciona si no lo verificaste.
+
+El resultado esperado es una aplicación funcional, no una maqueta.
